@@ -14,7 +14,7 @@ export const authOptions: AuthOptions = {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
     }),
     GithubProvider({
-      clientId: process.env.GITHUB_D as string,
+      clientId: process.env.GITHUB_ID as string,
       clientSecret: process.env.GITHUB_SECRET as string,
     }),
     CredentialsProvider({
@@ -28,7 +28,7 @@ export const authOptions: AuthOptions = {
           throw new Error("Invalid credentials");
         }
         const user = await prisma.user.findUnique({
-          where: { email: credentials?.email },
+          where: { email: credentials.email },
         });
         if (!user || !user?.hashedPassword) {
           throw new Error("Invalid credentials");
