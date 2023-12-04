@@ -33,7 +33,9 @@ export default async function RootLayout({
         <RentModal />
         <LoginModal />
         <RegisterModal />
-        <main>{children}</main>
+        <main>
+          <div className="py-28">{children}</div>
+        </main>
       </body>
     </html>
   );

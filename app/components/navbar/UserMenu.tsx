@@ -9,6 +9,7 @@ import { User } from "@prisma/client";
 import { signOut } from "next-auth/react";
 import useRentModal from "@/app/hooks/useRentModal";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 interface UserMenuProps {
   currentUser?: User | null;
@@ -18,6 +19,8 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
   const registerModal = useRegisterModal();
   const loginModal = useLoginModal();
   const rentModal = useRentModal();
+
+  const router = useRouter();
 
   // function to toggle the menu
   const [isOpen, setIsOpen] = useState(false);
@@ -65,6 +68,7 @@ const UserMenu = ({ currentUser }: UserMenuProps) => {
                   onClick={() => {
                     signOut();
                     toast.success("Logout successfully");
+                    setIsOpen(false);
                   }}
                 />
               </>
