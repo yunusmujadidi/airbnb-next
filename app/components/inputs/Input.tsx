@@ -34,7 +34,7 @@ const Input = ({
       )}
       <input
         id={id}
-        type={type}
+        type={formatPrice ? "number" : type}
         disabled={disabled}
         {...register?.(id, { required })}
         placeholder=" "
