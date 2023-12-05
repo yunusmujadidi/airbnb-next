@@ -80,13 +80,15 @@ const ListingCard = ({
           </div>
         </div>
         <div className="font-semibild text-lg">
-          {location?.region},{location?.label}
+          {location?.label}, {location?.region}
         </div>
         <div className="font-light text-neutral-500">
           {reservationDate || data.category}
         </div>
-        <div className="font-semibold">$ {price}</div>
-        {!reservation && <div className="font-light">night</div>}
+        <div className="font-semibold">
+          $ {price}{" "}
+          {!reservation && <span className="font-light">/ night</span>}
+        </div>
       </div>
       {onAction && actionLabel && (
         <Button
