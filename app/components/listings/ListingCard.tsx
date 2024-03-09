@@ -12,7 +12,7 @@ import HearthButton from "../HearthButton";
 import Button from "@/app/components/Button";
 
 interface ListingCardProps {
-  data: Listing;
+  data: SafeListing;
   reservation?: Reservation;
   onAction?: (id: string) => void;
   disabled?: boolean;

@@ -24,7 +24,7 @@ export default async function getListingById(params: IParams) {
         ...listing.user,
         createdAt: listing.user.createdAt.toISOString(), // Converting the user's createdAt date to ISO string format
         updatedAt: listing.user.updatedAt.toISOString(), // Converting the user's updatedAt date to ISO string format
-        emailVerified: listing.user.emailVerified?.toISOString(), // Converting the user's emailVerified date to ISO string format (if it exists)
+        emailVerified: listing.user.emailVerified?.toISOString() || null, // Converting the user's emailVerified date to ISO string format (if it exists)
       },
     };
   } catch (error: any) {
